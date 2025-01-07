@@ -61,7 +61,16 @@
 
 
 
+### Structure of  Junit test cases
 
+* junit-jupiter is the latest version; jupiter gives the API + runner
+* junit jupiter is also extensible. You can create extensions and plug them in
+* Include the dependency in your maven/gradle
+* Every class that begins or ends with **Test** or **TestCase** is automatically run
+* Every test is a method (non-private) method annotated with **@Test**
+* Assertions and check for the conditions
+* Every test (test method) is run **independent** of the other; And not sequentially; It's run parallely; So no guarantee on the order
+* **AAA** -> Arrange, Act, Assert;  **GWT** -> given, when, then
 
 
 
