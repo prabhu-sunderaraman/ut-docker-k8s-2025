@@ -73,7 +73,14 @@
 * **AAA** -> Arrange, Act, Assert;  **GWT** -> given, when, then
 
 
+### TDD
 
+* Unit tests act as users of your code
+* Write your unit tests first and fill in the methods to invoke the target class
+* Use IDE support to generate methods for the target class
+* One of the add on benefits is you write very less redundant code
+* You don't really worry about testing private methods etc. Because you drive your code design by writing tests; 
+* Your tests ALWAYS invoke the public methods; private methods are the **result of refactoring** public methods
 
 
 
