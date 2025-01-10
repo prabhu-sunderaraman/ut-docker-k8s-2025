@@ -84,6 +84,55 @@
 
 
 
+### Need for mocking
+
+* **Seamless development**
+* **Isolation**
+* **Loose coupling** between classes or entities
+
+* User input say from UI can be mocked
+* Avoid the dependencies used for that class! To control the behavior?
+* Test cases should run irrespective of the environment; Isolation
+* Avoid data retrieval from DB; Mock with dummy data
+
+* Rajan and Sravanthi are working with their code
+* Rajan develops a class **MyLibrary**
+* Sravanthi develops a class **MyCollection**
+* **MyLibrary** uses **MyCollection** class
+
+#### During development
+
+* Rajan is actively coding 
+* Sravanthi is off suddenly for 2-3 days, because of some emergency
+* Sravanthi is available but has not completed her development work because she gets pulled into some production issue
+* Sravanthi's work is getting delayed because the server that she needs to interact with is down
+* Sravanthi has completed her code, but whenever Rajan invokes her code, his code crashes
+
+* What will Rajan do?
+* Will he comment out all the integration work?
+* Will he wait till Sravanthi completes all her other work and comes back?
+* Will he wait till Sravanthi comes back from vacation?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
