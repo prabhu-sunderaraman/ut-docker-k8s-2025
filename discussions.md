@@ -97,7 +97,7 @@
 
 * Rajan and Sravanthi are working with their code
 * Rajan develops a class **MyLibrary**
-* Sravanthi develops a class **MyCollection**
+* Sravanthi develops a class ****MyCollection****
 * **MyLibrary** uses **MyCollection** class
 
 #### During development
