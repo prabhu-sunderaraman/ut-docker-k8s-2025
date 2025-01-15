@@ -76,4 +76,5 @@ public class CalcControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json(result));
     }
+
 }
