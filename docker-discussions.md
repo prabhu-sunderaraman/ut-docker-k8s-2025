@@ -60,6 +60,8 @@ docker pull mysql -> by default the latest version is pulled to your local repos
 ```
 docker run mysql:8.0.26
 docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium mysql:8.0.26
+docker ps
+docker logs <containerId>
 ```
 
 #### Accessing the container from host machine
