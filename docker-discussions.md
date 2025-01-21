@@ -41,11 +41,28 @@ docker ps
 * You just create an **Spring boot rest API IMAGE** and release it
 
 
+### Where are the docker images present?
 
+* docker hub (https://hub.docker.com/)
+* Look for a MySQL image
+* Download it to your machine
+* Create an instance of it (ie., create a container)
 
+```
+docker images
+docker pull <imagename>
+docker pull mysql:8.0.26
+docker pull mysql -> by default the latest version is pulled to your local repository
+```
 
+* Start the container
 
+```
+docker run mysql:8.0.26
+docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium mysql:8.0.26
+```
 
+#### Accessing the container from host machine
 
 
 
