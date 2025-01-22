@@ -94,6 +94,14 @@ docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306
 * /var/lib/mysql -> Look at the documentation
 
 
+* You can define a volume using docker command;
+* docker will use its own storage space and path
+
+```
+docker volume create mysql-indium-data
+docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306 -v mysql-indium-data:/var/lib/mysql mysql:8.0.26
+```
+
 
 
 
