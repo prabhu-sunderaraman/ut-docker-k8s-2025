@@ -66,6 +66,41 @@ docker logs <containerId>
 
 #### Accessing the container from host machine
 
+* Port mapping
+* From the host machine you need to map a port with the container port
+* The syntax is **-p hostPort:containerPort**
+
+```
+docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306 mysql:8.0.26
+docker run --name=indiummysql2 --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 9001:3306 mysql:8.0.26
+```
+
+```
+docker run --name=<name> --rm -d  -p <port1>:<port1> -p <port2>:<port2> <imageName>
+```
+
+#### Volumes
+
+* You map a container folder with a host machine's folder using volumes
+* The actual data will remain in the host machine and the container will use the data
+* When you stop/destroy the container, the host machine folder still remains intact
+* The syntax is **-v hostMachineFolder:containerMachineFolder**
+* The syntax is **-v hostMachineFolder:containerMachineFolder, hostMachineFolder:containerMachineFolder**
+ 
+```
+docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306 -v <hostMachineFolderPath>:/var/lib/mysql mysql:8.0.26
+```
+
+* /var/lib/mysql -> Look at the documentation
+
+
+
+
+
+
+
+
+
 
 
 
