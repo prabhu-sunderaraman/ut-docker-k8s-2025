@@ -125,7 +125,9 @@ apt-get update -y
 apt-get install -y iputils-ping
 ```
 
+### docker compose yml
 
+* docker compose is a YAML configuration to configure your containers, volumes, networks, environment variables at one shot
 
 
 

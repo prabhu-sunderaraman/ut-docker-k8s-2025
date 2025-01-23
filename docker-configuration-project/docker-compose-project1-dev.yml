@@ -1,0 +1,26 @@
+services:
+  mysql-c1:
+    image: mysql:8.0.26
+    container_name: c1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-c1:/var/lib/mysql
+    networks:
+      - db-network
+  mysql-c2:
+    image: mysql:8.0.26
+    container_name: c2
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql-c2:/var/lib/mysql
+    networks:
+      - db-network
+networks:
+  db-network:
+    driver: bridge
