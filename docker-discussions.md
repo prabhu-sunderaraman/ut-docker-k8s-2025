@@ -100,10 +100,30 @@ docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306
 ```
 docker volume create mysql-indium-data
 docker run --name=indiummysql --rm -d -e MYSQL_ROOT_PASSWORD=indium -p 3306:3306 -v mysql-indium-data:/var/lib/mysql mysql:8.0.26
+docker volume ls
+docker volume inspect <volume-name>
 ```
 
 
+### Networks
 
+* You can make containers talk to each other in two ways
+* Through the host machine (**Discussed later**)
+* Directly if they are are configured to belong to the same network
+
+
+```
+docker network ls
+docker network create <network-name>
+docker run --name=c2 --rm -d -e MYSQL_ROOT_PASSWORD=indium --network <network-name>   mysql:8.0.26
+```			
+
+* Try to **ping** one container from another
+* You can install ping
+```
+apt-get update -y
+apt-get install -y iputils-ping
+```
 
 
 
