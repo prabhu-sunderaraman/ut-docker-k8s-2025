@@ -1,0 +1,12 @@
+services:
+  my-rest-api:
+    container_name: my-rest-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+
+# Similar to the running the following commands
+# docker build -t my-rest-api .
+# docker run -p 8080:8080 my-rest-api

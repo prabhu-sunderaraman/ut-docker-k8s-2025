@@ -129,6 +129,42 @@ apt-get install -y iputils-ping
 
 * docker compose is a YAML configuration to configure your containers, volumes, networks, environment variables at one shot
 
+* Run the docker compose file by specifying the up command; networks, volumes etc are created
+
+```
+docker compose -p jan24 -f docker-compose-example2.yml up
+```
+
+* You can stop/remove the containers by running the down command; networks are removed; **But the volumes are not removed**
+
+```
+docker compose -p jan24 -f docker-compose-example2.yml down
+```
+
+* If you want to stop/remove the containers along with the volumes also, use -v option. **Be cautious**
+
+```
+docker compose -p jan24 -f docker-compose-example2.yml down -v
+```
+
+### Dockerfile
+
+* If you want to build your own image for your application say spring boot/nodejs/php/.net/python you need to specify the steps in a configuration file
+* **Dockerfile** is the name of the configuration file (can be changed)
+
+```Dockerfile
+FROM eclipse-temurin:22-alpine
+COPY target/rest-api-for_docker-0.0.1.jar app.jar
+CMD ["java", "-jar", "app.jar"]
+```
+
+* Build an image by running docker build command
+
+```
+docker build -t <imageNameOfYourChoice> .
+```
+
+* Create an instance by using **docker run** command
 
 
 

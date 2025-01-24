@@ -1,0 +1,34 @@
+services:
+  mongo-database:
+    image: mongo:4.4.8
+    container_name: mongo-database-demo
+    ports:
+      - "27017:27017"
+    networks:
+      - demo-network
+    volumes:
+      - mongo-demo-data:/data/db
+  mysql-database:
+    image: mysql:8.0.26
+    container_name: mysql-database-demo
+    environment:
+      - MYSQL_ROOT_PASSWORD=training
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-demo-data:/var/lib/mysql
+    networks:
+      - demo-network
+volumes:
+  mysql-demo-data:
+    driver: local
+  mongo-demo-data:
+    driver: local
+networks:
+  demo-network:
+    driver: bridge
+
+# the above configuration is similar to running the following commands individually
+# docker volume create mysql-demo-data
+# docker network create jan24-network
+# docker run -d --name mysql-database-demo -e MYSQL_ROOT_PASSWORD=training -p 3306:3306 --network jan24-network -v mysql-demo-data:/var/lib/mysql mysql:8.0.26
