@@ -21,3 +21,5 @@ public class WelcomeController {
 * Add a **healthcheck** section in **docker-compose-dev.yml**. Refer to **https://docs.docker.com/reference/compose-file/services/#healthcheck**
 
 * Deploy them and start the containers
+
+* Add the two instances to the same network and curl one instance from the other and check
