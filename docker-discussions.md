@@ -167,7 +167,23 @@ docker build -t <imageNameOfYourChoice> .
 * Create an instance by using **docker run** command
 
 
+### Steps
 
+* Develop your Spring boot rest API
+* Create a jar file **using maven** 
+* Define a **Dockerfile** which contains the steps to create an image of this application
+
+#### Either 
+
+* Run the **docker build command** to build the image
+* Launch your container using **docker run command**
+
+
+#### Or (In the project environments)
+
+* Define a docker-compose file 
+* Configure the container, image information. Refer to the Dockerfile created in Line#174
+* Run the **docker compose command** to automatically build, start containers 
 
 
 

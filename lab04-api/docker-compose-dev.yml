@@ -1,0 +1,34 @@
+services:
+  lab04-api-01:
+    image: lab04-api:1.0.0
+    container_name: lab04-api-01
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - "9090:8080"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/api/welcome" ]
+      interval: 1m
+      retries: 3
+    networks:
+      - lab04-network
+  lab04-api-02:
+    image: lab04-api:1.0.0
+    container_name: lab04-api-02
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    ports:
+      - "9091:8080"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://lab04-api-01:8080/api/welcome" ]
+      interval: 1m
+      retries: 3
+    depends_on:
+      - lab04-api-01
+    networks:
+      - lab04-network
+networks:
+  lab04-network:
+    driver: bridge
