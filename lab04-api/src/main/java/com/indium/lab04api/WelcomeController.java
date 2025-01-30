@@ -15,4 +15,11 @@ public class WelcomeController {
         response.put("message", "Welcome to the Dockerized Spring Boot API!");
         return response;
     }
+
+    @GetMapping("/api/health")
+    public Map<String, String> getHealth() {
+        Map<String, String> response = new HashMap<>();
+        response.put("status", "UP");
+        return response;
+    }
 }

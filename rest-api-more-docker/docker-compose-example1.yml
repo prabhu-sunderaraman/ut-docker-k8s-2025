@@ -1,0 +1,11 @@
+services:
+  rest-api-01:
+    image: rest-api:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - WELCOME=Welcome to the REST API FROM DOCKER-COMPOSE
+      - BYE=Goodbye from the REST API FROM DOCKER-COMPOSE

@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: rest-api
+welcome:
+  message: Welcome to the REST API
+bye:
+  message: Goodbye from the REST API
