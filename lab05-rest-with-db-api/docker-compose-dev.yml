@@ -1,0 +1,37 @@
+services:
+  backend:
+    container_name: lab05-rest-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: lab05-mysql
+      #      DB_HOST: host.docker.internal # connect to host machine
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: root
+      DB_NAME: training
+    depends_on:
+      - db
+    networks:
+      - lab05-network
+  db:
+    container_name: lab05-mysql
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: training
+    volumes:
+      - lab05-mysql-data:/var/lib/mysql
+    networks:
+      - lab05-network
+networks:
+  lab05-network:
+    driver: bridge
+volumes:
+  lab05-mysql-data:
+    driver: local

@@ -108,7 +108,7 @@ docker volume inspect <volume-name>
 ### Networks
 
 * You can make containers talk to each other in two ways
-* Through the host machine (**Discussed later**)
+* Through the host machine (**host.docker.internal**)
 * Directly if they are are configured to belong to the same network
 
 
