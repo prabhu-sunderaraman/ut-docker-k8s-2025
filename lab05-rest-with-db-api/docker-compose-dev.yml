@@ -6,13 +6,15 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    environment:
-      DB_HOST: lab05-mysql
-      #      DB_HOST: host.docker.internal # connect to host machine
-      DB_PORT: 3306
-      DB_USER: root
-      DB_PASSWORD: root
-      DB_NAME: training
+    env_file:
+      - .env.dev
+#    environment:
+#      DB_HOST: lab05-mysql
+#      #      DB_HOST: host.docker.internal # connect to host machine
+#      DB_PORT: 3306
+#      DB_USER: root
+#      DB_PASSWORD: root
+#      DB_NAME: training
     depends_on:
       - db
     networks:
