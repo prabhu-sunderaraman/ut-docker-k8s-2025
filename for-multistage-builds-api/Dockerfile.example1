@@ -1,0 +1,6 @@
+FROM maven:3.9.6-eclipse-temurin-21
+WORKDIR /app
+COPY . /app
+RUN ./mvnw clean compile package -DskipTests
+
+CMD ["java", "-jar", "target/for-multistage-builds-api-0.0.1.jar"]

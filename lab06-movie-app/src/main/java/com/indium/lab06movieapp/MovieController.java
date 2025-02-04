@@ -1,6 +1,7 @@
 package com.indium.lab06movieapp;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,9 +9,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/movies")
-@RequiredArgsConstructor
 public class MovieController {
-    private final MovieService movieService;
+    @Autowired
+    private MovieService movieService;
 
     @PostMapping
     public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {
