@@ -1,0 +1,6 @@
+FROM eclipse-temurin:22-alpine
+WORKDIR /app
+COPY . /app
+RUN ./mvnw clean package -DskipTests
+
+CMD ["java", "-jar", "target/rest-api-for_docker-0.0.1.jar"]

@@ -7,7 +7,7 @@
 * Run docker tag command
 
 ```
-docker tag <yourLocalImage> <hubAccount:repositoryName:tagName>
+docker tag <yourLocalImage> <hubAccount/repositoryName:tagName>
 ```
 
 * Push the docker image using Docker desktop UI or
