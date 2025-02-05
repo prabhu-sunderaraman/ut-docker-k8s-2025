@@ -13,6 +13,6 @@ docker tag <yourLocalImage> <hubAccount/repositoryName:tagName>
 * Push the docker image using Docker desktop UI or
 
 ```
-docker push <hubAccount:repositoryName:tagName>
+docker push <hubAccount/repositoryName:tagName>
 ```
 
