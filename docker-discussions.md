@@ -186,8 +186,35 @@ docker build -t <imageNameOfYourChoice> .
 * Run the **docker compose command** to automatically build, start containers 
 
 
+## Kubernetes (k8s)
+
+* Orchestration tool
+* Manage the life cycle of the containers
+* Make sure the containers are always up and running; Scale up/down the containers
+* Also written in Golang
+* **Docker swarm** is another orchestration tool. Used in smaller teams/projects
+* Installing DockerDesktop installs all the tools(engine and client) to work with **docker**
+* **Enabling kubernetes** on DockerDesktop installs all the tools(server and client) to work with k8s, **kubectl**
+* And **creates a single node cluster** in the machine (called docker-desktop)
+
+```
+kubectl version
+kubectl config get-contexts
+```
+
+#### Building block of k8s
 
 
+* Pod is the fundamental building block in k8s
+* Pod is a wrapper to a container.
+* So when you say, **kubernetize your application**, what you mean is 
+
+```markdown
+1. create an api
+2. containerize(dockerize) it
+3. Create a pod
+4. Deploy the pod
+```
 
 
 
