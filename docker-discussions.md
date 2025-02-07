@@ -216,7 +216,14 @@ kubectl config get-contexts
 4. Deploy the pod
 ```
 
+### Pods
 
+```
+kubectl run hit-pod --image=hitendra373/test-repo:multi-stage-1_0_0
+kubectl get pods
+kubectl logs hit-pod
+kubectl delete hit-pod
+```
 
 
 
