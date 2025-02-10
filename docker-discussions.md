@@ -254,6 +254,8 @@ kubectl create namespace my-ns
 kubectl get namespaces
 kubectl create deployment hit-deployment --image=hitendra373/test-repo:multi-stage-1_0_0 --replicas=1 -n hit-ns
 kubectl create deployment prabhu-deployment --image=prabhudev/febtraining2025:multistage -n my-ns
+kubectl describe deployment hit-deployment -n hit-ns
+kubectl describe namespace hit-ns
 kubectl scale deployment hit-deployment --replicas=2 -n hit-ns
 kubectl delete deployment prabhu-deployment -n my-ns
 kubectl delete deployment hit-deployment -n my-ns
