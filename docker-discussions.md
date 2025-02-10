@@ -225,11 +225,40 @@ kubectl logs hit-pod
 kubectl delete hit-pod
 ```
 
+* Unless you explicitly delete the pod, stopping the pod will make kube server restart it
+* A very powerful feature, which makes sure your underlying application is always up and running
+* Even if something goes wrong and application(or container) crashes, k8s will bring it up immediately
 
 
+### Deployments
+
+* Main build file like entity where you configure pods, services, namespaces, replicasets etc.
+* You can create and delete deployments
+* All the entities associated with the deployment will get created/destroyed
+* Starting point for working with k8s in a professional environment
 
 
+```
+kubectl create deployment hit-deployment --image=hitendra373/test-repo:multi-stage-1_0_0 --replicas=3
+kubectl scale deployment hit-deployment --replicas=4
+kubectl scale deployment hit-deployment --replicas=0
+kubectl delete deployment hit-deployment
+```
 
+* Namespaces
+
+```
+kubectl create namespace hit-ns
+kubectl get namespaces
+kubectl create namespace my-ns
+kubectl get namespaces
+kubectl create deployment hit-deployment --image=hitendra373/test-repo:multi-stage-1_0_0 --replicas=1 -n hit-ns
+kubectl create deployment prabhu-deployment --image=prabhudev/febtraining2025:multistage -n my-ns
+kubectl scale deployment hit-deployment --replicas=2 -n hit-ns
+kubectl delete deployment prabhu-deployment -n my-ns
+kubectl delete deployment hit-deployment -n my-ns
+kubectl delete namespace my-ns
+```
 
 
 
