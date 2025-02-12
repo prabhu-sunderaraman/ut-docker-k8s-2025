@@ -262,6 +262,27 @@ kubectl delete deployment hit-deployment -n my-ns
 kubectl delete namespace my-ns
 ```
 
+### Config files
+
+* YAML based configuration
+
+```
+kubectl apply -f <filename>
+kubectl delete -f <filename>
+```
+
+### Port forwarding
+
+* Access the application in the pod
+* Used for learning/demo/internal purposes only
+* Similar to port mapping in docker
+
+```
+kubectl port-forward pod/<podName> hostPort:containerPort -n <namespace>
+```
+
+
+
 
 
 
