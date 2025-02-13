@@ -281,10 +281,21 @@ kubectl delete -f <filename>
 kubectl port-forward pod/<podName> hostPort:containerPort -n <namespace>
 ```
 
+### Configmaps
+
+* key-value pairs
+* Create a configmap using yaml or kubectl create configmap command
+* Refer to the configmap individual properties or the whole block
+
+### Secrets
 
 
-
-
+* key-value pairs
+* Create a secret using yaml or kubectl create secret command
+* Values cannot be stored in clear text
+* You have to **encode in base64** format and store them
+* Decoding will be taken care automatically
+* Refer to the secrets indivdually or block
 
 
 

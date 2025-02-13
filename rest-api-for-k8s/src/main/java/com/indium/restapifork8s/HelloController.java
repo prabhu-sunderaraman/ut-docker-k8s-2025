@@ -8,8 +8,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+    @Value("${DB_PASSWORD:Default Password}")
+    private String dbPassword;
+
     @Value("${welcome.message}")
     private String welcomeMessage;
+
+    @Value("${greetings:Default Hello}")
+    private String greetingsMessage;
+
+    @GetMapping("/dbpassword")
+    public String dbPassword() {
+        return dbPassword;
+    }
+
+    @GetMapping("/greetings")
+    public String greetings() {
+        return greetingsMessage;
+    }
 
     @GetMapping("/welcome")
     public String welcome() {

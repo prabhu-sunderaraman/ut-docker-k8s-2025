@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rest-api-deployment
+  labels:
+    app: rest-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rest-api
+  template:
+    metadata:
+      labels:
+        app: rest-api
+    spec:
+      containers:
+        - name: rest-api
+          image: prabhudev/febtraining2025:api-for-k8s
+          envFrom:
+            - configMapRef:
+                name: training-config
+          ports:
+            - containerPort: 8080

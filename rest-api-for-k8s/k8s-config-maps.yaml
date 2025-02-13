@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: training-config
+data:
+  greetings: "v3:From config map: Hello from the Kubernetes world"
+  WELCOME: "v2:From config map: Welcome to the Kubernetes world"
+#  DB_PASSWORD: "indium"
