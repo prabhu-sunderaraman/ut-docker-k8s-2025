@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  selector:
+    app: mysql
+  type: NodePort
+  ports:
+    - port: 3306 # Expose the service on internal cluster IP on port 3306
+      targetPort: 3306 # Forward the connection to port 3306 on the pod
+      nodePort: 30002 # Expose the service on Node's IP at port 30001
