@@ -298,5 +298,36 @@ kubectl port-forward pod/<podName> hostPort:containerPort -n <namespace>
 * Refer to the secrets indivdually or block
 
 
+### StatefulSets
+
+* Alternative to deployments, where you want to persist data
+* You can configure volumes while deploying statefulsets
+* Used to host datasources as pods
+* The pod names are suffixed with sequential numbers starting from 0; mypod-0, mypod-1, mypod-2
+* When you destroy/scale down the statefulset the pods are destroyed in decreasing order; mypod-2, mypod-1, mypod-0
+
+
+### Services
+
+* Services are used to access the pods(the application in the pods)
+* You specify a port mapping by giving the targetPort
+* NodePort, LoadBalancer, Ingress
+* Problem with **NodePort**; the ports can start from 30001 only
+* **LoadBalancer** can be configured to use any port; it exposes the pod in an ip address
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
