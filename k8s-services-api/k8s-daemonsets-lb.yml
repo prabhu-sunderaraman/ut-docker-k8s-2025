@@ -1,11 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: k8s-services-api
   labels:
     app: k8s-services-api
 spec:
-  replicas: 1
   selector:
     matchLabels:
       app: k8s-services-api
@@ -33,7 +32,6 @@ spec:
   selector:
     app: k8s-services-api
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-      nodePort: 30001
-  type: NodePort
+  type: LoadBalancer

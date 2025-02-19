@@ -33,7 +33,6 @@ spec:
   selector:
     app: k8s-services-api
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-      nodePort: 30001
-  type: NodePort
+  type: LoadBalancer

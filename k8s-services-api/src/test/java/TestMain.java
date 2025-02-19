@@ -24,7 +24,5 @@ public class TestMain {
                             .thenAccept(System.out::println)
                             .join();
                 });
-
-
     }
 }
