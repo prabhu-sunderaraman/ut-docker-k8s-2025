@@ -311,9 +311,65 @@ kubectl port-forward pod/<podName> hostPort:containerPort -n <namespace>
 
 * Services are used to access the pods(the application in the pods)
 * You specify a port mapping by giving the targetPort
-* NodePort, LoadBalancer, Ingress
+* ClusterIP(default), NodePort, LoadBalancer, Ingress
 * Problem with **NodePort**; the ports can start from 30001 only
 * **LoadBalancer** can be configured to use any port; it exposes the pod in an ip address
+
+
+### DaemonSets
+
+* This ensures pod is created in every node in the cluster
+* If you have a 5 node cluster, then creating a dameon set will ensure the pod is created in each node in the cluster
+* Logging/Monitoring pod running in every node, you can set it up as a daemonset
+
+### Ingresses
+
+* Ingress is an object like Deployment in K8s
+* Ingress is used to configure Ingress Controllers; Similar to Deployment is used to configure Pods
+* Ingress Controllers are the routers or the API Gateways. They are used to route your incoming requests to the respective pods
+
+* You need an image to run as a Pod; Similarly you need a router that runs as an ingress controller
+* ngnix; traefik; istio examples of ingress controllers (aka routers)
+
+
+* http://localhost/math/square/10 -> **Redirect it to** square-api/square/10
+* http://localhost/math/cube/10 -> **Redirect it to** cube-api/cube/10
+
+
+#### Install nginx ingress controller
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/cloud/deploy.yaml
+```
+
+
+#### Setup Ingress by using ngnix ingress controller
+
+* kind: Ingress
+* Configure your paths
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
