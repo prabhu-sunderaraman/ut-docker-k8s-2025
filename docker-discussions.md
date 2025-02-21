@@ -349,7 +349,11 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main
 * Configure your paths
 
 
+### docker build platform
 
+```
+docker buildx build --platform linux/amd64 --load -t prabhudev/febtraining2025:square-api-amd .
+```
 
 
 
