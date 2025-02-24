@@ -356,6 +356,28 @@ docker buildx build --platform linux/amd64 --load -t prabhudev/febtraining2025:s
 ```
 
 
+### Helm charts
+
+* Abstraction to creating k8s resources
+* A helm chart is a collection of template files AND values
+* template files -> deployment, configmaps, secrets, services ...
+* You provide the values in values.yaml and refer to them using {{.Values.<key>}} in the templates files
+* Install the helm charts using
+
+```
+helm install <ReleaseName> <locationToHelmChartFolder>
+```	
+
+* Installing helm chart automatically created the k8s resources
+* Uninstall the helm charts using
+
+```
+helm uninstall <ReleaseName>
+```	
+
+* Uninstalling the helm chart deletes the k8s resources
+* In large projects, the developers focus only on creating the values, particularly for the configuration
+* They are shielded from the k8s concepts most of the time
 
 
 

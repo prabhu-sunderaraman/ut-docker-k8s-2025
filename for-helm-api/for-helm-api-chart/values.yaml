@@ -1,0 +1,16 @@
+image:
+  repository: "prabhudev/febtraining2025"
+  tag: "for-helm-api"
+  pullPolicy: IfNotPresent
+container:
+  rc: 2
+  name: "for-helm-api-container"
+service:
+  type: NodePort
+  nodePort: 30001
+  port: 80
+  tp: 8080
+ingress:
+  enabled: false
+welcome: "Welcome to HELM charts"
+bye: "Good Bye from HELM charts"
