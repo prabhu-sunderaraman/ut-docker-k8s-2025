@@ -16,3 +16,10 @@ spec:
         target:
           type: Utilization
           averageValue: 50m # 50 millicpu = 0.05 cpu
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageValue: 50m # 50 millicpu = 0.05 cpu
+
