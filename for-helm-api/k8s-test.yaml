@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-test-deployment
+spec:
+  selector:
+    matchLabels:
+      app: k8s-test
+  template:
+    metadata:
+      labels:
+        app: k8s-test
+    spec:
+      containers:
+        - name: k8s-test-container
+          image: gsdeva78/sagadevan_training:cube-api
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080

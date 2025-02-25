@@ -381,6 +381,13 @@ helm uninstall <ReleaseName>
 
 
 
+### HPA
+
+* Horizontal Pod Autoscalers
+* You set up HPA for your deployment specifying the min/max replicas and metrics based on which it decideds to scale up/down
+* Install the metrics server first - Similar to configuring ingress controller (ngnix, traefik...)
+* Setup HPA for your deployment in Yaml file
+
 
 
 
