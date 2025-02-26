@@ -33,7 +33,7 @@ You are tasked with building a Spring Boot REST API to manage user profiles. The
 
 * Core Functionality:
 
-- Store the fetched user details in a local database **(e.g., MySQL or H2) **for persistence. 
+- Store the fetched user details in a local database **(e.g., MySQL or H2)** for persistence. 
 - Design an appropriate schema for the user data, including tables for user information and address.
 - Use Spring Data JPA or JDBC Template to interact with the database.
 
