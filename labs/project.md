@@ -67,5 +67,5 @@ You are tasked with building a Spring Boot service to manage user profiles. The 
 * Spring Boot Service
 * Comprehensive unit and integration tests using Mockito and Testcontainers
 * Docker Image
-* Kubernetes Deployment Manifests:
+* Kubernetes Deployment Manifests: Use Helm charts if possible
 
