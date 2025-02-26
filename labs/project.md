@@ -1,7 +1,7 @@
 # Building  Spring Boot Service with Docker, Kubernetes, Testing, and Database
 
 ## Scenario:
-You are tasked with building a Spring Boot service to manage user profiles. The service will fetch user details from a remote API, process the data, and store it in a local database. The remote API will provide JSON data containing user information such as:
+You are tasked with building a Spring Boot REST API to manage user profiles. The API will process the data, and store it in a local database. It will provide JSON data containing user information such as:
 
 - `userId`: Unique identifier of the user
 - `firstName`: First name of the user
